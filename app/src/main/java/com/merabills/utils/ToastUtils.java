@@ -15,17 +15,7 @@ public class ToastUtils {
    * @param context context of activity.
    */
   public static void showLongMessage(String message, Context context) {
-    getToast(message, context, Toast.LENGTH_LONG).show();
-  }
-
-  /**
-   * Show short message.
-   *
-   * @param message message to show.
-   * @param context context of activity.
-   */
-  public static void showShortMessage(String message, Context context) {
-    getToast(message, context, Toast.LENGTH_SHORT).show();
+    getToast(message, context).show();
   }
 
   /**
@@ -33,10 +23,9 @@ public class ToastUtils {
    *
    * @param message message to show.
    * @param context context of activity.
-   * @param length length of toast.
    * @return toast instance.
    */
-  private static Toast getToast(String message, Context context, int length) {
-    return Toast.makeText(context, message, length);
+  private static Toast getToast(String message, Context context) {
+    return Toast.makeText(context, message, Toast.LENGTH_LONG);
   }
 }
