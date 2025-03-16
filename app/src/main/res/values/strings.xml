@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MultiplePaymentProject</string>
+    <string name="total_amount">Total Amount = \u20B9</string>
+    <string name="payments_title">Payments</string>
+    <string name="add_payment"><u>Add payment</u></string>
+    <string name="add_payment_dialog_tile">Add Payment</string>
+    <string name="save">Save</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="provider_hint">Provider \u0028 ICICI, Citibank, etc. \u0029</string>
+    <string name="transaction_reference">Transaction Reference</string>
+    <string name="amount">Amount</string>
+    <string name="rupee_sign">\u20B9</string>
+    <string name="message_payment_type_required">Payment type is required</string>
+    <string name="message_permission_denied">Permission denied</string>
+    <string name="message_payment_details_save">Payment Details Save Successfully</string>
+    <string name="message_error_saving_file">Error saving file</string>
+    <string name="message_error_reading_file">Error reading file</string>
+</resources>

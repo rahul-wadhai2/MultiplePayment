@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/addPaymentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:text="@string/add_payment_dialog_tile"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_large" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rupeeSign"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/rupee_sign"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/rupeeEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_border"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:padding="10dp"
+            android:hint="@string/amount" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnerPayments"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:spinnerMode="dropdown"
+        android:paddingEnd="30dp"
+        android:background="@drawable/spinner_background"
+        tools:ignore="RtlSymmetry" />
+
+    <LinearLayout
+        android:id="@+id/providerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/providerEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_border"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:padding="10dp"
+            android:hint="@string/provider_hint"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/transactionRefEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_border"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:padding="10dp"
+            android:hint="@string/transaction_reference" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:padding="20dp"
+        android:layout_gravity="end"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonCancel"
+            android:padding="10dp"
+            android:background="@drawable/button_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/text_size_medium"
+            android:text="@string/cancel" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonOk"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/button_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/text_size_medium"
+            android:text="@string/ok" />
+    </LinearLayout>
+
+</LinearLayout>
