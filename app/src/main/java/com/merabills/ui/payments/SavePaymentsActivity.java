@@ -2,8 +2,13 @@ package com.merabills.ui.payments;
 
 import static com.merabills.utils.Constant.REQUEST_CODE_WRITE_EXTERNAL_STORAGE;
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -59,10 +64,25 @@ public class SavePaymentsActivity
         });
 
         binding.saveButton.setOnClickListener(v -> {
-            if (ContextCompat.checkSelfPermission(this
-                    ,Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                if (Environment.isExternalStorageManager()) {
+                    viewModel.savePaymentsDetails();
+                } else {
+                    ToastUtils.showLongMessage(getString(
+                            R.string.message_manage_external_storage_permission),this);
+                    Intent intent = new Intent(Settings
+                            .ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                    intent.setData(Uri.parse("package:" + getPackageName()));
+                    startActivity(intent);
+                }
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (ContextCompat.checkSelfPermission(this
+                        , Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions();
+                } else {
+                    viewModel.savePaymentsDetails();
+                }
             } else {
                 viewModel.savePaymentsDetails();
             }
@@ -90,10 +110,24 @@ public class SavePaymentsActivity
      * Get payments details.
      */
     private void getPaymentsDetails() {
-        if (ContextCompat.checkSelfPermission(this
-                ,Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            if (Environment.isExternalStorageManager()) {
+                viewModel.getPaymentsDetails();
+            } else {
+                ToastUtils.showLongMessage(getString(
+                        R.string.message_manage_external_storage_permission),this);
+                Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                intent.setData(Uri.parse("package:" + getPackageName()));
+                startActivity(intent);
+            }
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(this
+                    , Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions();
+            } else {
+                viewModel.getPaymentsDetails();
+            }
         } else {
             viewModel.getPaymentsDetails();
         }
