@@ -177,6 +177,8 @@ public class SavePaymentsActivity
     @Override
     protected void onPause() {
         super.onPause();
-        addPaymentsDialog.dialogDismiss();
+        if (addPaymentsDialog != null) {
+            addPaymentsDialog.dialogDismiss();
+        }
     }
 }

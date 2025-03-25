@@ -1,13 +1,12 @@
 package com.bills.data.repository.payment;
 
 import static com.bills.utils.Constant.FILE_NAME;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Environment;
+import com.bills.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.bills.R;
 import com.bills.data.model.PaymentType;
 import com.bills.utils.ToastUtils;
 import java.io.BufferedReader;
@@ -72,7 +71,7 @@ public class PaymentLocalDataSource implements PaymentDataSource.Local {
         try (FileOutputStream fos = new FileOutputStream(file)) {
             fos.write(fileContent.getBytes());
             fos.flush();
-            ToastUtils.showLongMessage(context.getString(com.bills.R.string.message_payment_details_save)
+            ToastUtils.showLongMessage(context.getString(R.string.message_payment_details_save)
                     +"\n"+file.getAbsolutePath(), context);
         } catch (IOException e) {
             ToastUtils.showLongMessage(context.getString(R.string.message_error_saving_file)

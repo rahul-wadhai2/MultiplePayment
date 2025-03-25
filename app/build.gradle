@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.merabills'
+    namespace 'com.bills'
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.merabills"
+        applicationId "com.bills"
         minSdk 21
         targetSdk 35
         versionCode 1
