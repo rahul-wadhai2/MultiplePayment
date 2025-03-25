@@ -20,7 +20,7 @@
         android:theme="@style/Theme.MultiplePaymentProject"
         tools:targetApi="31">
 
-        <activity android:name="com.merabills.ui.payments.SavePaymentsActivity"
+        <activity android:name="com.bills.ui.payments.SavePaymentsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

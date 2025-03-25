@@ -1,6 +1,6 @@
-package com.merabills.ui.payments;
+package com.bills.ui.payments;
 
-import static com.merabills.utils.Constant.REQUEST_CODE_WRITE_EXTERNAL_STORAGE;
+import static com.bills.utils.Constant.REQUEST_CODE_WRITE_EXTERNAL_STORAGE;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,20 +15,25 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.chip.Chip;
-import com.merabills.R;
-import com.merabills.data.DataManager;
-import com.merabills.data.model.PaymentType;
-import com.merabills.data.repository.payment.PaymentRepository;
-import com.merabills.databinding.ActivitySavepaymentsBinding;
-import com.merabills.ui.base.BaseActivity;
-import com.merabills.utils.ToastUtils;
-import com.merabills.utils.Utils;
+import com.bills.R;
+import com.bills.data.DataManager;
+import com.bills.data.model.PaymentType;
+import com.bills.data.repository.payment.PaymentRepository;
+import com.bills.databinding.ActivitySavepaymentsBinding;
+import com.bills.ui.base.BaseActivity;
+import com.bills.utils.ToastUtils;
+import com.bills.utils.Utils;
 
 /**
  * Save payments activity class.
  */
 public class SavePaymentsActivity
         extends BaseActivity<ActivitySavepaymentsBinding, SavePaymentsViewModel> {
+
+    /**
+     *  Add payments dialog initialize.
+     */
+    private AddPaymentsDialog addPaymentsDialog;
 
     @NonNull
     @Override
@@ -58,7 +63,7 @@ public class SavePaymentsActivity
      */
     private void setListeners() {
         binding.addPaymentButton.setOnClickListener(v -> {
-            AddPaymentsDialog addPaymentsDialog =
+            addPaymentsDialog =
                     new AddPaymentsDialog(SavePaymentsActivity.this);
             addPaymentsDialog.show(viewModel.processPaymentTypes(), viewModel);
         });
@@ -167,5 +172,11 @@ public class SavePaymentsActivity
         ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                 REQUEST_CODE_WRITE_EXTERNAL_STORAGE);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        addPaymentsDialog.dialogDismiss();
     }
 }

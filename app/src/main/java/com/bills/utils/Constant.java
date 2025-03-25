@@ -1,4 +1,4 @@
-package com.merabills.utils;
+package com.bills.utils;
 
 /**
  * Constant class.

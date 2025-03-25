@@ -1,4 +1,4 @@
-package com.merabills.ui.base;
+package com.bills.ui.base;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

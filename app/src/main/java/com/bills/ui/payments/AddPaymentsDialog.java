@@ -1,9 +1,9 @@
-package com.merabills.ui.payments;
+package com.bills.ui.payments;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
-import static com.merabills.utils.Constant.BANK_TRANSFER;
-import static com.merabills.utils.Constant.CREDIT_CARD;
+import static com.bills.utils.Constant.BANK_TRANSFER;
+import static com.bills.utils.Constant.CREDIT_CARD;
 import android.app.Dialog;
 import android.content.Context;
 import android.view.View;
@@ -15,10 +15,10 @@ import android.widget.LinearLayout;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatSpinner;
-import com.merabills.R;
-import com.merabills.data.model.PaymentDetails;
-import com.merabills.data.model.PaymentType;
-import com.merabills.utils.ToastUtils;
+import com.bills.R;
+import com.bills.data.model.PaymentDetails;
+import com.bills.data.model.PaymentType;
+import com.bills.utils.ToastUtils;
 import java.util.Objects;
 
 /**
@@ -119,5 +119,14 @@ public class AddPaymentsDialog {
             dialog.dismiss();
         });
         dialog.show();
+    }
+
+    /**
+     * Dismiss dialog here.
+     */
+    public void dialogDismiss() {
+        if (dialog != null) {
+            dialog.dismiss();
+        }
     }
 }

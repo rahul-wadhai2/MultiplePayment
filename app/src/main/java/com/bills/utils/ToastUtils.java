@@ -1,4 +1,4 @@
-package com.merabills.utils;
+package com.bills.utils;
 
 import android.content.Context;
 import android.widget.Toast;
@@ -20,6 +20,7 @@ public class ToastUtils {
 
   /**
    * Get toast.
+   *
    *
    * @param message message to show.
    * @param context context of activity.

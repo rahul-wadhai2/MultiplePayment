@@ -1,10 +1,10 @@
-package com.merabills.data;
+package com.bills.data;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import com.merabills.data.repository.payment.PaymentLocalDataSource;
-import com.merabills.data.repository.payment.PaymentRepository;
-import com.merabills.data.repository.payment.PaymentRepositoryImpl;
+import com.bills.data.repository.payment.PaymentLocalDataSource;
+import com.bills.data.repository.payment.PaymentRepository;
+import com.bills.data.repository.payment.PaymentRepositoryImpl;
 
 /**
  *  Data Manager class use for manage all types of data.

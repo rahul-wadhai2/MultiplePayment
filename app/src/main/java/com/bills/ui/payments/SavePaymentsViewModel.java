@@ -1,13 +1,13 @@
-package com.merabills.ui.payments;
+package com.bills.ui.payments;
 
-import static com.merabills.utils.Constant.BANK_TRANSFER;
-import static com.merabills.utils.Constant.CASH;
-import static com.merabills.utils.Constant.CREDIT_CARD;
+import static com.bills.utils.Constant.BANK_TRANSFER;
+import static com.bills.utils.Constant.CASH;
+import static com.bills.utils.Constant.CREDIT_CARD;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import com.merabills.data.model.PaymentType;
-import com.merabills.data.repository.payment.PaymentRepository;
-import com.merabills.ui.base.BaseViewModel;
+import com.bills.data.model.PaymentType;
+import com.bills.data.repository.payment.PaymentRepository;
+import com.bills.ui.base.BaseViewModel;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

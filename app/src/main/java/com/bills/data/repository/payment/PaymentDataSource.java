@@ -1,6 +1,6 @@
-package com.merabills.data.repository.payment;
+package com.bills.data.repository.payment;
 
-import com.merabills.data.model.PaymentType;
+import com.bills.data.model.PaymentType;
 import java.util.ArrayList;
 
 /**

@@ -1,9 +1,9 @@
-package com.merabills.ui.payments;
+package com.bills.ui.payments;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-import com.merabills.data.repository.payment.PaymentRepository;
+import com.bills.data.repository.payment.PaymentRepository;
 
 /**
  * view model factory class.

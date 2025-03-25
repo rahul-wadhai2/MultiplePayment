@@ -1,4 +1,4 @@
-package com.merabills.data.model;
+package com.bills.data.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

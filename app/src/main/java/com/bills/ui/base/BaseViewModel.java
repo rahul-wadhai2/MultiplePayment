@@ -1,4 +1,4 @@
-package com.merabills.ui.base;
+package com.bills.ui.base;
 
 import androidx.lifecycle.ViewModel;
 

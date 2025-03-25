@@ -1,4 +1,4 @@
-package com.merabills;
+package com.bills;
 
 import org.junit.Test;
 
