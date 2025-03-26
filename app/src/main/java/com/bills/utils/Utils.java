@@ -1,5 +1,6 @@
 package com.bills.utils;
 
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -15,8 +16,9 @@ public class Utils {
      * @return formated amount.
      */
     public static String getFormatedAmount(double amount) {
-        NumberFormat format = NumberFormat
-                .getCurrencyInstance(new Locale("en", "IN"));
-        return format.format(amount).replaceAll("Rs.|₹", "").trim();
+        NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(new Locale("en", "IN"));
+        DecimalFormat decimalFormat = new DecimalFormat("0.000");
+        String formattedAmount = decimalFormat.format(amount);
+        return currencyFormat.format(Double.parseDouble(formattedAmount));
     }
 }
