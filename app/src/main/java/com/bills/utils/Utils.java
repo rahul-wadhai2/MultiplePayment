@@ -19,6 +19,7 @@ public class Utils {
         NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(new Locale("en", "IN"));
         DecimalFormat decimalFormat = new DecimalFormat("0.000");
         String formattedAmount = decimalFormat.format(amount);
-        return currencyFormat.format(Double.parseDouble(formattedAmount));
+        return currencyFormat.format(Double.parseDouble(formattedAmount))
+                .replaceAll("Rs.|₹", "").trim();
     }
 }
